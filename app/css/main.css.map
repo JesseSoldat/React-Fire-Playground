@@ -1,0 +1,1 @@
+{"version":3,"file":"main.css","sources":["main.scss"],"sourcesContent":["// Put any @imports here\n// See Readme for a list of supported ones\n\nbody {\n  background: #e2ebf3;\n}\n"],"mappings":"AAGA,AAAA,IAAI,CAAC;EACH,UAAU,EAAE,OAAQ,GACrB","names":[],"sourceRoot":"/source/"}
