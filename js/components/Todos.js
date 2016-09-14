@@ -1,21 +1,5 @@
 import React from 'react';
-
-let TodoList = React.createClass({
-	render: function(){
-		let _this = this;
-		let createItem = function(item, index){
-			return (
-			<li key={index}>
-				{item.text}
-        <span
-          onClick={_this.props.removeItem.bind(null, item['.key'])}
-          style={{color:'red', marginLeft:'10px', cursor:'pointer'}}>X</span>
-			</li>
-			);
-		} //createItem
-		return <ul>{this.props.items.map(createItem)}</ul>;	
-	}//render
-}); //TodoList
+import TodosList from './TodosList';
 
 let Todos = React.createClass({
 	mixins: [ReactFireMixin],
@@ -27,10 +11,10 @@ let Todos = React.createClass({
 		}
 	},
 
-componentWillMount: function() {
-  var firebaseRef = firebase.database().ref('jlist/items');
-  this.bindAsArray(firebaseRef, 'items');
-},
+  componentWillMount: function() {
+    var firebaseRef = firebase.database().ref('jlist/items');
+    this.bindAsArray(firebaseRef, 'items');
+  },
 
 
   handleSubmit: function(e){
@@ -66,7 +50,7 @@ componentWillMount: function() {
 
 					<button>{'Add #' +(this.state.items.length + 1)}</button>
 				</form>
-				<TodoList items={this.state.items}
+				<TodosList items={this.state.items}
         removeItem={this.removeItem} />
 			</div>
 			)

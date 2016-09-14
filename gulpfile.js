@@ -15,6 +15,7 @@ var stylish = require('jshint-stylish');
 var htmlhint = require('gulp-htmlhint');
 var jscs = require('gulp-jscs');
 var watch = require('gulp-watch'); // A Better File Watcher
+var history = require('connect-history-api-fallback');
 
 // Set up Foundation
 var path = require('path');
@@ -131,7 +132,10 @@ gulp.task('watch', function() {
 gulp.task('server', ['default'], function () {
   return gulp.src('app')
     .pipe(server({
-      livereload: true
+    
+      livereload: true,
+   
+
     }));
 });
 
